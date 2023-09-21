@@ -9,6 +9,9 @@ import 'package:starwars_app/src/presentation/utils/reusable_widget/custom_loadi
 
 class SearchPage extends ConsumerWidget {
   SearchPage({super.key});
+
+  ///_____ Timer to delay callback while user typing a keyword
+  ///_____ so API will only called when user completed the keyword typing
   final Debouncer _debouncer = Debouncer(milliseconds: 1000);
 
   @override

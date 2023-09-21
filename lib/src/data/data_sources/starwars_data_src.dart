@@ -12,6 +12,7 @@ import 'package:starwars_app/src/data/model/model_species_detail.dart';
 
 final starWarsDataSrcProvider = Provider((ref) => StarWarsDataSource());
 
+///____ Define all SWAPI remote data API 
 class StarWarsDataSource {
 
   Future<ModelSpecies> speciesList() async {

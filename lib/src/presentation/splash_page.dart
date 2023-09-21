@@ -14,7 +14,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
 
-  bool _visible = false;
+  bool _visible = false; 
   bool _loading = false;
 
   @override
@@ -24,6 +24,7 @@ class _SplashPageState extends State<SplashPage> {
     _chcekConnection();
   }
 
+  ///_____ Set for "Starward" text to fade in
   void _setParam () async {
     Future.delayed(const Duration(seconds: 1), () {
       setState(() => _visible = true);
@@ -34,6 +35,7 @@ class _SplashPageState extends State<SplashPage> {
     });
   }
 
+  ///_____ Check internet connection when in SplashPage 
   void _chcekConnection() async {
     try {
       final result = await InternetAddress.lookup('example.com');

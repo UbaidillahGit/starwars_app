@@ -6,6 +6,10 @@ final startshipProvider = StateNotifierProvider<StartshipNotifier, AsyncValue<Ma
   return StartshipNotifier(ref);
 });
 
+/// Mark every vehicle remote-data results with custom [id] that extracted from UrlString
+/// wrap it with [ <String, ModelStartship>{} ] scheme, then defined it on [starshipMap] Map
+/// It will remain until User close the app, so a single Starship data will get for one-time only 
+/// and can be reuse for another people/character as long the id is same
 class StartshipNotifier extends StateNotifier<AsyncValue<Map<String, ModelStartship>>> {
   StartshipNotifier(this._notifierProviderRef) : super(const AsyncValue.data({})) {
     _dataSource = _notifierProviderRef.watch(starWarsDataSrcProvider);
@@ -20,6 +24,5 @@ class StartshipNotifier extends StateNotifier<AsyncValue<Map<String, ModelStarts
     final stringModel = <String, ModelStartship>{idx : modelStartship};
     starshipMap.addEntries(stringModel.entries);
     state = AsyncValue.data(starshipMap);
-    // log('getStartship $idx | ${state.value!.entries.first.value.toJson()}');
   }
 }

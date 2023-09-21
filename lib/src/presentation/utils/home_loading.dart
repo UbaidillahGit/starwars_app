@@ -13,7 +13,7 @@ class HomePageLoading extends StatelessWidget {
           height: 20,
         ),
         const Text(
-          'Calling species...',
+          'Calling character...',
           style: TextStyle(fontFamily: 'Starjedi', color: Colors.white),
         )
       ],

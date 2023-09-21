@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_homworld.dart';
@@ -8,6 +6,10 @@ final homeworldProvider = StateNotifierProvider<HomeworldNotifier, AsyncValue<Ma
   return HomeworldNotifier(ref);
 });
 
+/// Mark every vehicle remote-data results with custom [id] that extracted from UrlString
+/// wrap it with [ <String, ModelHomeworld>{} ] scheme, then defined it on [homeworldMap] Map
+/// It will remain until User close the app, so a single Homeworld data will get for one-time only 
+/// and can be reuse for another people/character as long the id is same
 class HomeworldNotifier extends StateNotifier<AsyncValue<Map<String, ModelHomeworld>>> {
   HomeworldNotifier(this._notifierProviderRef) : super(const AsyncValue.data({})) {
     _dataSource = _notifierProviderRef.watch(starWarsDataSrcProvider);
@@ -22,6 +24,5 @@ class HomeworldNotifier extends StateNotifier<AsyncValue<Map<String, ModelHomewo
     final stringModel = <String, ModelHomeworld>{idx : modelHomeworld};
     homeworldMap.addEntries(stringModel.entries);
     state = AsyncValue.data(homeworldMap);
-    log('getHomeworld $idx | ${state.value!.entries.first.value.toJson()}');
   }
 }

@@ -26,7 +26,6 @@ class _PeopleDetailPageState extends ConsumerState<PeopleDetailPage> {
   @override
   Widget build(BuildContext context) {
     final watch = ref.watch(provPeopleDetail);
-    // final watchStarship = ref.watch(startshipProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -44,7 +43,12 @@ class _PeopleDetailPageState extends ConsumerState<PeopleDetailPage> {
           children: [
             Container(
               height: 300,
-              decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/war.jpeg'), fit: BoxFit.cover)),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/war.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -60,11 +64,11 @@ class _PeopleDetailPageState extends ConsumerState<PeopleDetailPage> {
                       const SizedBox(height: 20),
                       DetailInfoField(title: 'Gender', value: data.gender ?? ''),
                       const SizedBox(height: 20),
-                      const StartshipsExpansion(),
+                      const StartshipsExpansion(), ///_____ Display startship information
                       const SizedBox(height: 20),
-                      const VehicleExpansion(),
+                      const VehicleExpansion(), ///_____ Display vehicle information
                       const SizedBox(height: 20),
-                      const HomeworldExpansion(),
+                      const HomeworldExpansion(), ///_____ Display homeworld information
                       const SizedBox(height: 20),
                     ],
                   ),

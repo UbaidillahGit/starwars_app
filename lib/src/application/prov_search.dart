@@ -1,6 +1,4 @@
 
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_people.dart';
@@ -18,12 +16,13 @@ class HomeSearchNotifier extends StateNotifier<AsyncValue<ModelPeople>?> {
   late final StarWarsDataSource _dataSource;
 
   Future<void> search({required String keyword}) async {
-    log('keyword $keyword');
     if (keyword.isNotEmpty) {
-      state = const AsyncLoading();
+      state = const AsyncLoading(); ///_____ Set state on loading when keyword is valid
       final res = await AsyncValue.guard(() async => await _dataSource.searchPeople(keyword));
       state = AsyncData(res.asData!.value);
     } else {
+      ///_____ Set state on null when there's no keyword provided
+      ///_____ so the search result would be back to null
       state = null;
     }
   }

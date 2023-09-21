@@ -1,8 +1,6 @@
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_people.dart';
-
 
 ///_____ define bool value provider for loading indicator mechanism
 final isLoadingPagination = StateProvider.autoDispose<bool>((ref) => false);
@@ -18,7 +16,7 @@ class PeopleNotifier extends StateNotifier<AsyncValue<ModelPeople>> {
   final StateNotifierProviderRef _notifierProviderRef;
   bool isLoadingPagination = false;
 
-  ///_____ Get all Starwars character by people 
+  ///_____ Get all Starwars character by people
   Future<void> getPoeple() async {
     state = const AsyncLoading();
     final res = await AsyncValue.guard(() async => await _dataSource.getPeople());
@@ -33,7 +31,7 @@ class PeopleNotifier extends StateNotifier<AsyncValue<ModelPeople>> {
     isLoadingPagination = true;
     state = AsyncValue.data(state.asData!.value);
 
-    ///_____ Check nextUrl available, if null then no pagination will run 
+    ///_____ Check nextUrl available, if null then no pagination will run
     if (nextUrl != null) {
       final res = await AsyncValue.guard(() async => await _dataSource.peoplePagination(nextUrl));
 
