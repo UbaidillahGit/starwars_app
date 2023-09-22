@@ -14,7 +14,7 @@ Startwars App explore characters, startships, vehicles and homeworlds from the S
 
 
 # Project Architecture and Structure
-Fundamentally this app uses DDD(Domain Driver-Design) architecture which seperate four layer of the app
+Fundamentally this app uses DDD(Domain Driven-Design) architecture which separate four layer of the app
 - Application handle the business logic using Riverpod state management
 - Presentation handle the core of the UI
 - Domain handle entities and model
