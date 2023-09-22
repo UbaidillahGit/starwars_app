@@ -1,6 +1,6 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
+import 'package:starwars_app/src/infrastructure/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_people.dart';
 
 final searchProvider = StateNotifierProvider<HomeSearchNotifier, AsyncValue<ModelPeople>?>((ref) {

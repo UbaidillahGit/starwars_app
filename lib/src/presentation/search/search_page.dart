@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:starwars_app/common/custom_text.dart';
+import 'package:starwars_app/src/presentation/utils/reusable_widget/custom_text.dart';
 import 'package:starwars_app/src/application/prov_search.dart';
 import 'package:starwars_app/src/presentation/detail/detail_page.dart';
 import 'package:starwars_app/src/presentation/utils/debouncer.dart';

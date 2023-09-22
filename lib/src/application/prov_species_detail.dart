@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
+import 'package:starwars_app/src/infrastructure/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_species_detail.dart';
 
 final provSpeciesDetail = StateNotifierProvider.autoDispose<NotifierSpeciesDetail, AsyncValue<ModelSpeciesDetail>>((ref) 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starwars_app/common/custom_text.dart';
+import 'package:starwars_app/src/presentation/utils/reusable_widget/custom_text.dart';
 
 class CustomLoadingOne extends StatelessWidget {
   const CustomLoadingOne({super.key, required this.title});

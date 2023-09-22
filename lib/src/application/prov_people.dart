@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:starwars_app/src/data/data_sources/starwars_data_src.dart';
+import 'package:starwars_app/src/infrastructure/data_sources/starwars_data_src.dart';
 import 'package:starwars_app/src/data/model/model_people.dart';
 
 ///_____ define bool value provider for loading indicator mechanism
