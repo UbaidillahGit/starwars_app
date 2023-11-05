@@ -85,7 +85,7 @@ class _SplashPageState extends State<SplashPage> {
               child: const Text(
                 'Star Wars',
                 style: TextStyle(
-                  fontSize: 60,
+                  fontSize: 45,
                   fontWeight: FontWeight.w500,
                   color: Colors.white,
                   fontFamily: 'Starjhol'

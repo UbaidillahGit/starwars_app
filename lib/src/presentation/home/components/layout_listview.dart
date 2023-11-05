@@ -47,7 +47,7 @@ class LayoutListview extends ConsumerWidget {
                       children: [
                         Text(
                           '${watchPeople.value?.results?[index].name}',
-                          style: const TextStyle(fontFamily: 'Starjedi', color: Colors.white, fontSize: 40),
+                          style: const TextStyle(fontFamily: 'Starjedi', color: Colors.white, fontSize: 30),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 10),
@@ -56,7 +56,7 @@ class LayoutListview extends ConsumerWidget {
                           style: const TextStyle(
                             fontFamily: 'Starjedi',
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 18,
                           ),
                         ),
                       ],
