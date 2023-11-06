@@ -25,7 +25,7 @@ Fundamentally this app uses DDD(Domain Driven-Design) architecture which separat
 - from the root of project run "flutter pub get" or open pubspec.yaml and CMD+S for Mac or Ctrl+S for windows
 - from the root of project run "flutter run"
 
-# Task completeness
+# Key features
 - Display a list of Star Wars characters. ✅
 - Allow users to select a character from the list. ✅
 - Display detailed information about the selected character ✅
